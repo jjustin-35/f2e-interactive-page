@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect, useState } from 'react';
 import {
     Container,
     Row,
@@ -6,14 +7,28 @@ import {
 } from 'react-bootstrap';
 
 export const Index = () => {
+    // animate
+    const [isLight, setIsLight] = useState(false);
+    const makeStarter = () => {
+        const starter = Math.random() * 1000;
+
+        setTimeout(() => {
+            setIsLight(true);
+        }, starter)
+    }
+
+    useEffect(() => {
+        makeStarter();
+    }, []);
+
     return (
         <>
-            <div>
-                <div className="light light-sm light-start-bottom"></div>
-                <div className="light light-md light-start-top"></div>
-                <div className="light light-lg light-end-bottom"></div>
-            </div>
-            <Container>
+            <Container className='position-relative'>
+                <div>
+                    <div className={"light light-sm light-start-bottom light-position-st-md" + (isLight ? " light-animate" : "")}></div>
+                    <div className="light light-md light-end-bottom light-position-e-md"></div>
+                    <div className="light light-lg light-start-top light-position-e-b"></div>
+                </div>
                 <Row className="title">
                     <Col xs={{ offset: 1 }}>
                         <h1 className='title-fs text-hollow  title-hover title-hover-main'>The F2E 4th
