@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import {
     Container,
     Row,
@@ -8,26 +8,33 @@ import {
 
 export const Index = () => {
     // animate
-    const [isLight, setIsLight] = useState(false);
-    const makeStarter = () => {
-        const starter = Math.random() * 1000;
+    const lights = {
+        lightRef1: useRef(),
+        lightRef2: useRef(),
+        lightRef3: useRef()
+    }
+
+    const makeStarter = (light) => {
+        const starter = Math.random() * 4000;
 
         setTimeout(() => {
-            setIsLight(true);
+            light.classList.add("light-animate")
         }, starter)
     }
 
     useEffect(() => {
-        makeStarter();
+        for (let light in lights) {
+            makeStarter(lights[light].current);
+        }
     }, []);
 
     return (
         <>
             <Container className='position-relative'>
                 <div>
-                    <div className={"light light-sm light-start-bottom light-position-st-md" + (isLight ? " light-animate" : "")}></div>
-                    <div className="light light-md light-end-bottom light-position-e-md"></div>
-                    <div className="light light-lg light-start-top light-position-e-b"></div>
+                    <div className="light light-sm light-start-bottom light-position-st-md" ref={lights.lightRef1}></div>
+                    <div className="light light-md light-end-bottom light-position-e-md" ref={lights.lightRef2}></div>
+                    <div className="light light-lg light-start-top light-position-e-b" ref={lights.lightRef3}></div>
                 </div>
                 <Row className="title">
                     <Col xs={{ offset: 1 }}>
