@@ -1,0 +1,14 @@
+@mixin fz($fontsize){
+    font-size: $fontsize;
+    line-height: $fontsize + 12px;
+}
+
+@mixin p-x($padding){
+    padding-left: $padding;
+    padding-right: $padding;
+}
+
+@mixin p-y($padding){
+    padding-top: $padding;
+    padding-bottom: $padding;
+}

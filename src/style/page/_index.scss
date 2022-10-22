@@ -1,0 +1,48 @@
+.title{
+    margin-bottom: 183px;
+    &-fs{
+        font-size: 180px;
+        font-weight: 600;
+        &-sub{
+            font-size: 100px;
+        }
+    }
+    &-hover{
+        position: relative;
+        & span{
+            transition: all ease 0.5s;
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+        }
+        &-main span{
+            top: -18px;
+            left: -26px;
+        }
+        &-sub span{
+            top: -12px;
+            left: -29px;
+        }
+        &:hover{
+            &>span{
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}
+
+.light-position{
+    &-st-md{
+        left: 194px;
+        top: 377px;
+    }
+    &-e-md{
+        right: 139px;
+        top: 231px;
+    }
+    &-e-b{
+        right: 324px;
+        top: 679px;
+    }
+}

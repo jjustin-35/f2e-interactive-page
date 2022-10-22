@@ -1,0 +1,73 @@
+.light{
+    position: absolute;
+    border: 1px solid $primary;
+    border-radius: 50%;
+    &-lg{
+        $size: 177px;
+        width: $size;
+        height: $size;
+        &::before{
+            $smSize: 80%;
+            width: $smSize;
+            height: $smSize;
+        }
+    }
+    &-md{
+        $size: 147px;
+        width: $size;
+        height: $size;
+        &::before{
+            $smSize: 80%;
+            width: $smSize;
+            height: $smSize;
+        }
+    }
+    &-sm{
+        $size: 113px;
+        width: $size;
+        height: $size;
+        &::before{
+            $smSize: 80%;
+            width: $smSize;
+            height: $smSize;
+        }
+    }
+    &::before{
+        content:'';
+        position: absolute;
+        background: $secondary;
+        border-radius: 50%;
+        box-shadow: 1px 1px 20px $secondary;
+        // opacity: 0.2;
+    }
+    &-start-bottom::before{
+        bottom: 27px;
+        left: 50%;
+    }
+    &-start-top::before{
+        top: 27px;
+        left: 50%;
+    }
+    &-end-bottom::before{
+        bottom: 27px;
+        right: 50%;
+    }
+    &-animate::before{
+        animation: spotlight 2s infinite;
+    }
+}
+
+@keyframes spotlight {
+    0%{
+        width: 80%;
+        height: 80%;
+    }
+    50%{
+        width: 100%;
+        height: 100%;
+    }
+    100%{
+        width: 80%;
+        height: 80%;
+    }
+}
