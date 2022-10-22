@@ -6,39 +6,25 @@
         $size: 177px;
         width: $size;
         height: $size;
-        &::before{
-            $smSize: 80%;
-            width: $smSize;
-            height: $smSize;
-        }
     }
     &-md{
         $size: 147px;
         width: $size;
         height: $size;
-        &::before{
-            $smSize: 80%;
-            width: $smSize;
-            height: $smSize;
-        }
     }
     &-sm{
         $size: 113px;
         width: $size;
         height: $size;
-        &::before{
-            $smSize: 80%;
-            width: $smSize;
-            height: $smSize;
-        }
     }
     &::before{
         content:'';
         position: absolute;
-        background: $secondary;
+        background: radial-gradient($dark, $secondary);
         border-radius: 50%;
-        box-shadow: 1px 1px 20px $secondary;
-        // opacity: 0.2;
+        opacity: 0.2;
+        width: inherit;
+        height: inherit;
     }
     &-start-bottom::before{
         bottom: 27px;
@@ -59,15 +45,12 @@
 
 @keyframes spotlight {
     0%{
-        width: 80%;
-        height: 80%;
+        opacity: 0.2;
     }
     50%{
-        width: 100%;
-        height: 100%;
+        opacity: 1;
     }
     100%{
-        width: 80%;
-        height: 80%;
+        opacity: 0.2;
     }
 }

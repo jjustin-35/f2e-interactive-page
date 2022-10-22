@@ -34,15 +34,24 @@
 
 .light-position{
     &-st-md{
-        left: 194px;
+        left: clac(194px/1440px*100%);
         top: 377px;
     }
     &-e-md{
-        right: 139px;
+        right: calc(139px/1440px*100%);
         top: 231px;
     }
     &-e-b{
-        right: 324px;
+        right: calc(324px/1440px*100%);
         top: 679px;
+    }
+}
+
+@keyframes fadein {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
     }
 }
