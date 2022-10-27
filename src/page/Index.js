@@ -7,12 +7,14 @@ import {
 
 // components
 import { Fadein, Spotlight } from '../components/Style-Components';
+import { Sect2 } from '../components/Sect2';
+import { Sect3 } from '../components/Sect3';
 
 export const Index = () => {
     return (
         <>
-            <Container className='position-relative'>
-                <Fadein>
+            <Container className='position-relative py-3'>
+                <Fadein from={{x: -100}} to={{x: 0}}>
                 <Row className="title">
                     <Col xs={{ offset: 1 }}>
                         <h1 className='title-fs text-hollow title-hover title-hover-main fadein fadein-1'>The F2E 4th
@@ -30,6 +32,9 @@ export const Index = () => {
                     <Spotlight />
                 </Fadein>
             </Container>
+
+            <Sect2 />
+            <Sect3 />
         </>
   )
 }

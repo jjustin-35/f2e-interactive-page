@@ -43,6 +43,30 @@
     }
 }
 
+.with-italic-line{
+    position: relative;
+    width: fit-content;
+    &::after{
+        content: "";
+        position: absolute;
+        top: -200%;
+        width: 189.5px;
+        height: 2px;
+        background: $primary;
+    }
+    &.line-top{
+        $deg: 50deg;
+        &-end::after{
+            transform: rotate(-$deg);
+            left: 25%;
+        }
+        &-start::after{
+            transform: rotate($deg);
+            right: 25%;
+        }
+    }
+}
+
 @keyframes spotlight {
     0%{
         opacity: 0.2;

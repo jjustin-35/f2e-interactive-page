@@ -1,17 +1,41 @@
 import React from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
     Navbar,
     Container,
     Row,
     Col,
     Nav,
-    NavDropdown
- } from 'react-bootstrap';
-
+} from 'react-bootstrap';
 export const Layout = ({ children }) => {
+  const [show, setShow] = useState(true);
+  const [lastTop, setLastTop] = useState(0);
+
+  const controlNav = () => {
+    if (typeof window !== undefined) {
+      if (window.scrollY > lastTop) {
+        setShow(false);
+      } else {
+        setShow(true);
+      }
+
+      setLastTop(window.scrollY);
+    }
+  }
+
+  useEffect(() => {
+    if (typeof window !== undefined) {
+      window.addEventListener('scroll', controlNav)
+    }
+
+    return () => {
+      window.removeEventListener('scroll', controlNav);
+    }
+  }, [lastTop])
+
   return (
-      <>
-          <Navbar bg="dark" variant="dark" expand="lg" className="py-0 fs-1-5 sticky-top">
+      <div>
+          <Navbar bg="dark" variant="dark" expand="lg" className={"py-0 fs-1-5 sticky-top nav " + (show ? "" : "hideup")}>
               <Container>
                   <Row className="w-100">
                   <Col>
@@ -33,6 +57,6 @@ export const Layout = ({ children }) => {
               </Container>
           </Navbar>
           {children}
-    </>
+    </div>
   )
 }

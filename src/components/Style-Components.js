@@ -32,31 +32,18 @@ export const Spotlight = () => {
     </div>
   )
 }
-export const ScrollMoveIn = ({ from, children }) => {
-    const triggerRef = useRef();
-    ScrollTrigger.create({
-        trigger: triggerRef.current,
-        markers: true,
 
-    })
-    return (
-        <div className='scrollMoveIn' ref={triggerRef}>
-            { children }
-        </div>
-    )
-}
-
-export const Fadein = ({ children }) => {
+export const Fadein = ({ from = {}, to = {}, children }) => {
     useEffect(() => {
         const fadein = document.querySelectorAll(".fadein");
         const tl = gsap.timeline();
 
         fadein.forEach(element => {
             tl.fromTo(element, {
-                x: -100,
+                ...from,
                 opacity: 0
             }, {
-                x: 0,
+                ...to,
                 opacity: 1,
                 duration: 1
             })
