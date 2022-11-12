@@ -102,7 +102,7 @@ export const Sect2 = () => {
 
   return (
       <div className='position-relative' ref={ref}>
-          <div className="scroll-trigger vh-100 w-100">
+          <div className="scroll-trigger vh-100 w-100 sect2">
             <div className="scroll-box scroll-box1 bg-primary w-100 d-flex justify-content-center align-items-center">
                 <div className="scroll-content1 fs-3 text-dark">羨慕別人的酷酷網頁動畫？</div>
             </div>

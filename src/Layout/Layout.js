@@ -35,7 +35,7 @@ export const Layout = ({ children }) => {
 
   return (
       <div>
-          <Navbar bg="dark" variant="dark" expand="lg" className={"py-0 fs-1-5 sticky-top nav " + (show ? "" : "hideup")}>
+          <Navbar bg="dark" variant="dark" expand="lg" className={"py-0 fs-1-5 fixed-top nav " + (show ? "" : "hideup")}>
               <Container>
                   <Row className="w-100">
                   <Col>

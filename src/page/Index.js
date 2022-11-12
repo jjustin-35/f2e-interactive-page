@@ -11,11 +11,13 @@ import { Sect2 } from '../components/Sect2';
 import { Sect3 } from '../components/Sect3';
 import { Sect4 } from '../components/Sect4';
 import { Sect5 } from '../components/Sect5';
+import { Sect6 } from '../components/Sect6';
+import { Sect7 } from '../components/Sect7';
 
 export const Index = () => {
     return (
         <>
-            <Container className='position-relative py-3'>
+            <Container className='position-relative py-3 sect1'>
                 <Fadein from={{x: -100}} to={{x: 0}}>
                 <Row className="title">
                     <Col xs={{ offset: 1 }}>
@@ -39,6 +41,8 @@ export const Index = () => {
             <Sect3 />
             <Sect4 />
             <Sect5 />
+            <Sect6 />
+            <Sect7 />
         </>
   )
 }
