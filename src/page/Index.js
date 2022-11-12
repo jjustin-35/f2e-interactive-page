@@ -9,6 +9,8 @@ import {
 import { Fadein, Spotlight } from '../components/Style-Components';
 import { Sect2 } from '../components/Sect2';
 import { Sect3 } from '../components/Sect3';
+import { Sect4 } from '../components/Sect4';
+import { Sect5 } from '../components/Sect5';
 
 export const Index = () => {
     return (
@@ -17,8 +19,8 @@ export const Index = () => {
                 <Fadein from={{x: -100}} to={{x: 0}}>
                 <Row className="title">
                     <Col xs={{ offset: 1 }}>
-                        <h1 className='title-fs text-hollow title-hover title-hover-main fadein fadein-1'>The F2E 4th
-                        <span className='text-primary title-fs'>The F2E 4th</span>
+                        <h1 className='title-fs text-hollow title-hover title-hover-main fadein fadein-1 w-md-auto w-fit mx-auto mx-md-0'>The<br className="d-md-none"/> F2E 4th
+                        <span className='text-primary title-fs'>The <br className="d-md-none"/> F2E 4th</span>
                         </h1>
                     </Col>
                 </Row>
@@ -35,6 +37,8 @@ export const Index = () => {
 
             <Sect2 />
             <Sect3 />
+            <Sect4 />
+            <Sect5 />
         </>
   )
 }

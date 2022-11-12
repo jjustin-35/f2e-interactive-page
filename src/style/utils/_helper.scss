@@ -26,5 +26,8 @@
 }
 
 .hideup{
-    top: -100px;
+    transform: translateY(-105%);
+    // @include media-breakpoint-up(lg){
+    //     top: -100px;
+    // }
 }

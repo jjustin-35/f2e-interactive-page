@@ -15,10 +15,10 @@ export const Sect3 = () => {
         scrollTrigger: {
           trigger: ".sect3",
           pin: true,
-          markers: true,
-          scrub: true,
+          // markers: true,
           start: "top top",
-          end: "top top-=2000"
+          end: "top top-=1000",
+          toggleActions: "play none resume reset",
         }
       });
 
@@ -34,8 +34,7 @@ export const Sect3 = () => {
         }, {
           visibility: "visible",
           xPercent: 1,
-          opacity: 1,
-          duration: 10,
+          opacity: 1
         })
         .fromTo(".sect3-half-circle-e", {
           visibility: "hidden",
@@ -44,8 +43,7 @@ export const Sect3 = () => {
         }, {
           visibility: "visible",
           xPercent: 0,
-          opacity: 1,
-          duration: 10
+          opacity: 1
         }, "<")
         .to(".sect3-circle", {
           rotation: "90deg"
@@ -56,13 +54,11 @@ export const Sect3 = () => {
         })
         .from(".sect3-intro-1", {
           opacity: 0,
-          left: 0,
-          duration: 5,
+          left: 0
         })
         .from(".sect3-intro-2", {
           opacity: 0,
-          right: 0,
-          duration: 5
+          right: 0
         })
       
     }, ref);
@@ -72,7 +68,7 @@ export const Sect3 = () => {
 
   return (
     <section className='position-relative' ref={ref}>
-      <div className="sect3 vh-100 py-5">
+      <div className="sect3 vh-100 py-3">
         <h2 className="sect3-title fw-bold text-primary fs-2 text-center mb-3">
         以下兩個角色進行攜手合作
         </h2>
@@ -81,8 +77,8 @@ export const Sect3 = () => {
           <div className="sect3-half-circle sect3-half-circle-e"></div>
         </div>
         <div className="">
-          <p className="sect3-intro sect3-intro-1 text-primary fs-2 with-italic-line line-top-end">UI 設計師</p>
-          <p className="sect3-intro sect3-intro-2 text-primary fs-2 with-italic-line line-top-start">前端工程師</p>
+          <p className="sect3-intro sect3-intro-1 text-primary fs-2 with-italic-line line-top-end with-line with-line-line-down">UI 設計師</p>
+          <p className="sect3-intro sect3-intro-2 text-primary fs-2 with-italic-line line-top-start with-line with-line-line-top">前端工程師</p>
         </div>
       </div>
     </section>

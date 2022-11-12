@@ -26,9 +26,10 @@ export const Spotlight = () => {
 
   return (
       <div>
-        <div className="light light-sm light-start-bottom light-position-st-md fadein" ref={lights.lightRef1}></div>
-        <div className="light light-md light-end-bottom light-position-e-md fadein" ref={lights.lightRef2}></div>
-        <div className="light light-lg light-start-top light-position-e-b fadein" ref={lights.lightRef3}></div>
+        
+          <div className="light light-top light-end-bottom light-position-e-md fadein" ref={lights.lightRef2}></div>
+          <div className="light light-middle light-md-start-bottom light-start-top light-position-st-md fadein" ref={lights.lightRef1}></div>
+        <div className="light light-bottom light-md-start-top light-start-bottom light-position-e-b fadein" ref={lights.lightRef3}></div>
     </div>
   )
 }

@@ -4,3 +4,12 @@ html, body{
     background-color: $dark;
     font-family: 'Open Sans', sans-serif;
 }
+
+:root{
+    --device: "mobile";
+    @include media-breakpoint-up(md){
+        --device: "pc";
+    }
+}
+
+$device: var(--device);

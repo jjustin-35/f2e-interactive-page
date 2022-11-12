@@ -2,20 +2,35 @@
     position: absolute;
     border: 1px solid $primary;
     border-radius: 50%;
-    &-lg{
-        $size: 177px;
+    &-bottom{
+        $size: 57px;
         width: $size;
         height: $size;
+        @include media-breakpoint-up(md){
+            $size: 177px;
+            width: $size;
+            height: $size;
+        }
     }
-    &-md{
-        $size: 147px;
+    &-middle{
+        $size: 88px;
         width: $size;
         height: $size;
+        @include media-breakpoint-up(md){
+            $size: 147px;
+            width: $size;
+            height: $size;
+        }
     }
-    &-sm{
-        $size: 113px;
+    &-top{
+        $size: 63px;
         width: $size;
         height: $size;
+        @include media-breakpoint-up(md){
+            $size: 63px;
+            width: $size;
+            height: $size;
+        }
     }
     &::before{
         content:'';
@@ -38,31 +53,75 @@
         bottom: 27px;
         right: 50%;
     }
+    &-md-start-bottom::before{
+        @include media-breakpoint-up(md){
+            bottom: 27px;
+            left: 50%;
+        }
+    }
+    &-md-start-top::before{
+        @include media-breakpoint-up(md){
+            top: 27px;
+            left: 50%;
+        }
+    }
+    &-md-end-bottom::before{
+        @include media-breakpoint-up(md){
+            bottom: 27px;
+            right: 50%;
+        }
+    }
     &-animate::before{
         animation: spotlight 2s infinite;
     }
 }
 
-.with-italic-line{
+
+.with-line{
     position: relative;
     width: fit-content;
     &::after{
         content: "";
         position: absolute;
-        top: -200%;
-        width: 189.5px;
+        width: 7vh;
         height: 2px;
         background: $primary;
+        transform: translateX(50%) rotate(90deg) ;
     }
-    &.line-top{
-        $deg: 50deg;
-        &-end::after{
-            transform: rotate(-$deg);
-            left: 25%;
+    &-line-down::after{
+        top: 170%;
+        right: 50%;
+    }
+    &-line-top::after{
+        bottom: 170%;
+        right: 50%;
+    }
+}
+
+
+.with-italic-line{
+    @include media-breakpoint-up(lg){
+        position: relative;
+        width: fit-content;
+        &::after{
+            content: "";
+            position: absolute;
+            top: -200%;
+            width: 189.5px;
+            height: 2px;
+            background: $primary;
         }
-        &-start::after{
-            transform: rotate($deg);
-            right: 25%;
+        &.line-top{
+            $deg: 50deg;
+            &-end::after{
+                transform: rotate(-$deg);
+                left: 15%;
+            }
+            &-start::after{
+                transform: rotate($deg);
+                left: auto;
+                right: 15%;
+            }
         }
     }
 }

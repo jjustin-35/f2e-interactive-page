@@ -1,10 +1,19 @@
 .title{
-    margin-bottom: 183px;
+    margin-bottom: 60px;
+    @include media-breakpoint-up(md){
+        margin-bottom: 183px;
+    }
     &-fs{
-        font-size: 130px;
+        font-size: 60px;
+        @include media-breakpoint-up(md){
+            font-size: 130px;
+        };
         font-weight: 600;
         &-sub{
-            font-size: 80px;
+            font-size: 30px;
+            @include media-breakpoint-up(md){
+                font-size: 80px;
+            }
         }
     }
     &-hover{
@@ -16,12 +25,20 @@
             position: absolute;
         }
         &-main span{
-            top: -18px;
-            left: -26px;
+            top: -12px;
+            left: -20px;
+            @include media-breakpoint-up(md){
+                top: -18px;
+                left: -26px;
+            }
         }
         &-sub span{
-            top: -12px;
-            left: -29px;
+            top: -10px;
+            left: -23px;
+            @include media-breakpoint-up(md){
+                top: -12px;
+                left: -29px;
+            }
         }
         &:hover{
             &>span{
@@ -35,11 +52,15 @@
 .light-position{
     &-st-md{
         left: clac(194px/1440px*100%);
-        top: 377px;
+        top: 377px;  
     }
     &-e-md{
-        right: calc(139px/1440px*100%);
-        top: 231px;
+        right: 25%;
+        top: calc(105px/812px*100%);
+        @include media-breakpoint-up(md){
+            right: calc(139px/1440px*100%);
+            top: 231px;
+        }
     }
     &-e-b{
         right: calc(324px/1440px*100%);
@@ -56,6 +77,12 @@
     }
 }
 
+.bubble{
+    position: absolute;
+    left: 0;
+    top: 0
+}
+
 .sect3-circle{
     position: absolute;
     top: 50%;
@@ -64,7 +91,7 @@
 }
 
 .sect3-half-circle{
-    $diameter:290px;
+    $diameter:171px;
     width: calc($diameter/2);
     height: $diameter;
     border: 5px solid $primary;
@@ -74,6 +101,18 @@
     }
     &-e{
         border-radius: 0 $diameter $diameter 0 ;
+    }
+    @include media-breakpoint-up(lg){
+        $diameter:290px;
+        width: calc($diameter/2);
+        height: $diameter;
+        &-s{
+            border-radius: $diameter 0 0 $diameter;
+            background-color: $primary;
+        }
+        &-e{
+            border-radius: 0 $diameter $diameter 0 ;
+        }
     }
 }
 
@@ -87,13 +126,162 @@
 }
 
 .sect3-intro{
-    $distance: 270px;
     position: absolute;
-    bottom: 5%;
+    white-space: nowrap;
     &-1{
-        left: $distance;
+        left: 50%;
+        top: 25%;
+        transform: translateX(-50%);
     }
     &-2{
-        right: $distance;
+        right: 50%;
+        bottom: 10%;
+        transform: translateX(50%);
+    }
+    @include media-breakpoint-up(md){
+        &-1{
+            top: 20%;
+        }
+        &-2{
+            bottom: 5%
+        }
+    }
+    @include media-breakpoint-up(lg){
+        position: absolute;
+        $distance: 270px;
+        bottom: 5%;
+        transform: none;
+        left: auto;
+        top: auto;
+        &-1{
+            
+            left: $distance;
+        }
+        &-2{
+            right: $distance;
+        }
+    }
+}
+
+.sect4-theme{
+    $width: 90vw;
+    $height: $width * (496px / 351px);
+    $half-height: $height/2;
+    &s{
+        perspective-origin: center center;
+        perspective: 500px;
+        width: $width;
+        height: $height;
+        &-space{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            // 要讓 space 旋轉，將中心點設在中心
+            transform-origin: 50% 50% (-$half-height);
+        }
+    }
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    // 中心點設在方塊中間
+    transform-origin: 50% 50% (-$half-height);
+    &-w2{
+        transform: rotateX(-90deg);
+    }
+    &-w3{
+        transform: rotateX(-180deg);
+    }
+}
+
+@include media-breakpoint-up(md){
+    .sect4-theme{
+        $width: 50vw;
+        $height: $width * (468px / 648px + 0.05);
+        $half-height: $height/2;
+        &s{
+            width: $width;
+            height: $height;
+            &-space{
+                transform-origin: 50% 50% (-$half-height);
+            }
+        }
+        transform-origin: 50% 50% (-$half-height);
+    }
+}
+.sect5{
+    overflow: hidden;
+}
+
+.sect5-tl{
+    max-height: 2450px;
+    &-line{
+        width: 40px;
+        @include media-breakpoint-up(md){
+            width: 80px;
+        }
+    }
+}
+
+.sect5-intro{
+    &-content{
+        opacity: 0;
+        visibility: hidden;
+    }
+    &-1{
+        margin-top: 120px;
+        @include media-breakpoint-up(md){
+            margin-top: 41px;
+        }
+        &-img{
+            max-width: 99px;
+            @include media-breakpoint-up(md){
+                max-width: none;
+                right: auto;
+            }
+        }
+    }
+    &-2{
+        margin-top: 170px;
+        @include media-breakpoint-up(md){
+            margin-top: 100px;
+        }
+        &-img{
+            max-width: 71px;
+            right: 50%;
+            @include media-breakpoint-up(md){
+                top: -50%;
+                right: 50px;
+                max-width: none;
+            }
+        }
+    }
+    &-3{
+        margin-top: 130px;
+        @include media-breakpoint-up(md){
+            margin-top: 200px;
+        }
+        &-img{
+            max-width: 97px;
+            right: 0;
+            bottom: -60px;
+            @include media-breakpoint-up(md){
+                max-width: none;
+                top: -150px;
+                right: 152px;
+            }
+        }
+    }
+    &-4{
+        margin-top: 350px;
+        @include media-breakpoint-up(md){
+            margin-top: 780px;
+        }
+    }
+    &-banner{
+        bottom: 280px;
+        @include media-breakpoint-up(md){
+            bottom: 500px;
+        }
     }
 }
