@@ -15,7 +15,7 @@ export const Sect7 = () => {
                     pin: true,
                     start: "top top",
                     end: "top top-=2000",
-                    markers: true,
+                    // markers: true,
                     toggleActions: "play none resume reset"
                 }
             })
