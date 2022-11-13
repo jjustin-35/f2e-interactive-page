@@ -13,6 +13,7 @@ import { Sect4 } from '../components/Sect4';
 import { Sect5 } from '../components/Sect5';
 import { Sect6 } from '../components/Sect6';
 import { Sect7 } from '../components/Sect7';
+import { Sect8 } from '../components/Sect8';
 
 export const Index = () => {
     return (
@@ -43,6 +44,7 @@ export const Index = () => {
             <Sect5 />
             <Sect6 />
             <Sect7 />
+            <Sect8 />
         </>
   )
 }

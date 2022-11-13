@@ -25,7 +25,7 @@ export const Sect7 = () => {
                 strokeDashoffset: "1000",
             }, {
                 strokeDashoffset: 0,
-                duration: 3,
+                // duration: 3,
             }).fromTo(".sect7-company", {
                 yPercent: 100,
                 opacity: 0,
