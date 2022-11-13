@@ -1,70 +1,24 @@
-# Getting Started with Create React App
+## 作品說明
+The F2E 第4屆活動網站設計，以黃、黑色為整體主題色，呈現出星光的設計風格；在互動式方面，則大量使用隨頁面滑動呈現動畫(如：滑動網站，介紹區塊自左側滑入等)，呈現更多互動性。
+本專案參考 F2E 原本活動網站的區塊設計，將網站區分為八個區塊，每個區塊皆有不同的介紹，並伴隨著不同的互動式動畫。
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 系統說明
+本專案使用 Create-React-App 的 cli 建構，可使用```npm install```，```npm start```運行本專案。
 
-## Available Scripts
+Node.js 版本為 v16.14.0。
 
-In the project directory, you can run:
+## 資料夾說明
+- public: 放置靜態資料。
+- src: 放置 jsx 檔案。
+    - components: 放置區塊元件。
+    - layout: 放置 navbar 等重複使用之模板。
+    - page: 放置首頁。
+    - provider: 放置管理資料、傳遞給下層元件的 provider 。
+    - style: 放置 SCSS 檔案。
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 使用技術
+- React.js
+- gsap
+- SCSS
+- Bootstrap 5
+- React Bootstrap
